@@ -29,15 +29,18 @@ nltk.download('stopwords')
 
 # Mysql Database Connection
 
-'''connection = pymysql.connect(
+timeout = 10
+connection = pymysql.connect(
   charset="utf8mb4",
   connect_timeout=timeout,
   cursorclass=pymysql.cursors.DictCursor,
   db="defaultdb",
   host="smart-resume-analyzer-app-animeworld20056-a99b.a.aivencloud.com",
   password="AVNS_NP55pH9ubY_JYFhUapk",
+  read_timeout=timeout,
   port=11758,
   user="avnadmin",
+  write_timeout=timeout,
 )
   
 try:
@@ -47,7 +50,7 @@ try:
   cursor.execute("SELECT * FROM mytest")
   print(cursor.fetchall())
 finally:
-  connection.close()'''
+  connection.close()
 
 
 
@@ -127,11 +130,8 @@ def course_recommender(course_list):
 
 
 # sql connector
-connection = pymysql.connect(host='smart-resume-analyzer-app-animeworld20056-a99b.a.aivencloud.com',
-                             user='avnadmin',
-                             password='AVNS_NP55pH9ubY_JYFhUapk',
-                             db='defaultdb')
-cursor = connection.cursor()
+'''connection = pymysql.connect(host='localhost',user='Root',password='root@MySQL4admin',db='cv')
+cursor = connection.cursor()'''
 
 
 # inserting miscellaneous data, fetched results, prediction and recommendation into user_data table
