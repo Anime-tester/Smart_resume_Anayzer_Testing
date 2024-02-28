@@ -29,7 +29,7 @@ nltk.download('stopwords')
 
 # Mysql Database Connection
 
-timeout = 10
+'''timeout = 10
 connection = pymysql.connect(
   charset="utf8mb4",
   connect_timeout=timeout,
@@ -50,12 +50,12 @@ try:
   cursor.execute("SELECT * FROM mytest")
   print(cursor.fetchall())
 finally:
-  connection.close()
+  connection.close()'''
 
 
 
 # SQl Database Set up
-'''import os
+import os
 import psycopg2
 
 
@@ -66,7 +66,7 @@ with conn.cursor() as cur:
 cur.execute("SELECT now()")
 res = cur.fetchall()
 conn.commit()
-print(res)'''
+print(res)
 
 
 ###### Preprocessing functions ######
