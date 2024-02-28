@@ -29,18 +29,15 @@ nltk.download('stopwords')
 
 # Mysql Database Connection
 
-'''timeout = 10
-connection = pymysql.connect(
+'''connection = pymysql.connect(
   charset="utf8mb4",
   connect_timeout=timeout,
   cursorclass=pymysql.cursors.DictCursor,
   db="defaultdb",
   host="smart-resume-analyzer-app-animeworld20056-a99b.a.aivencloud.com",
   password="AVNS_NP55pH9ubY_JYFhUapk",
-  read_timeout=timeout,
   port=11758,
   user="avnadmin",
-  write_timeout=timeout,
 )
   
 try:
@@ -55,7 +52,7 @@ finally:
 
 
 # SQl Database Set up
-import os
+'''import os
 import psycopg2
 
 
@@ -66,7 +63,7 @@ with conn.cursor() as cur:
 cur.execute("SELECT now()")
 res = cur.fetchall()
 conn.commit()
-print(res)
+print(res)'''
 
 
 ###### Preprocessing functions ######
@@ -130,8 +127,11 @@ def course_recommender(course_list):
 
 
 # sql connector
-'''connection = pymysql.connect(host='localhost',user='Root',password='root@MySQL4admin',db='cv')
-cursor = connection.cursor()'''
+connection = pymysql.connect(host='smart-resume-analyzer-app-animeworld20056-a99b.a.aivencloud.com',
+                             user='avnadmin',
+                             password='AVNS_NP55pH9ubY_JYFhUapk',
+                             db='defaultdb')
+cursor = connection.cursor()
 
 
 # inserting miscellaneous data, fetched results, prediction and recommendation into user_data table
